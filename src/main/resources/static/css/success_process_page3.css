@@ -1,0 +1,23 @@
+
+html,body{
+    color: #eee;
+    height: 100vh;
+    width: 100%;
+    background: #181a19;
+    font-family: 'Open Sans', Arial, sans-serif;
+
+}
+
+.success_page{
+    min-width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #181a19; */
+}
+
+.success_corps{
+    width: 100%;
+    text-align: center;
+}

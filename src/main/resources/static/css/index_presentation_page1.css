@@ -1,0 +1,128 @@
+
+
+body{
+    font-family: sans-serif;
+    /* background-color: #40fd0711; */
+
+    
+}
+.section-padding{
+    padding: 40px 0;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color:#5a4654;
+    border-bottom: 1px solid #5a4654;
+   
+}
+
+h2{
+    color:#5a4654;
+    font-size: 3rem;
+    font-weight: 600;
+
+}
+@keyframes cursor{
+    50%{border-color: transparent}
+}
+@keyframes typing{
+    from{width: 0}
+}
+
+h3{
+    font-size: 4rem;
+    font-weight: 600;
+    background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0, 255, 0) 14.28%, 
+    rgb(0, 255, 255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: 600vw 600vw;
+    animation: slide 10s linear infinite forwards;
+    
+} 
+
+@keyframes slide{
+    0%{
+        background-position-x: 0% ;
+    }
+    100%{
+        background-position-x: 600vw;
+    }
+} 
+
+.btn a{
+    color: #ce0cff;
+    width: 50px;
+
+}
+
+.fin p{
+    font-style: italic;
+    color: #4d4d4d;
+}
+
+
+
+ 
+/*
+h2 span{
+    position: relative;
+    color:#00000011;
+    animation: displayText 9s infinite;
+    animation-delay: calc(-3s * var(--i));
+
+}
+
+@keyframes displayText{
+    0%{
+        display: inline-block;
+    }
+    33.33%,100%
+    {
+        display: none;
+    }
+   
+} */
+/* h2 span::before{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #000000;
+    border-right: 4px solid #09e238;
+    filter: drop-shadow(0 0 5px) drop-shadow(0 0 25px #f50baf);
+    animation: animate 3s linear infinite;
+} */
+
+
+/* @keyframes animate{
+    0%,10%,100%{
+        width: 0;
+    }
+
+    70%,90%{
+        width: 100%
+    }
+}  */
+
+
+.container-fluid strong{
+    font-size: 3rem;
+}
+
+/* .image img{
+    width: 50%;
+    height: auto;
+    transform: translate(0px, 50px), scale(0);
+    /* background-color: blue; */
+
+/* 
+image{
+    background-color: black;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-self: end;
+} */

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formualire_page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form_page2.css}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="bubbles">
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+
+        </div>
+
+        <div class="container_titre">
+            <h2>merci de valider votre participation</h2>
+        </div>
+
+        <div class="card">
+            <div class="box">
+                <!-- <p>content</p> -->
+                <!-- montant non valide -->
+                <!-- <div th:if="${errorMessage}" class="alert alert-warning text-center">
+                    [[${errorMessage}]]
+                </div> -->
+
+
+                <form id="participantForm" method="post" th:action="add_element" th:object="${participant}" autocomplete="off">
+                    <h2>mes coordonnés</h2>
+                    <div class="inputBox">
+                        <input type="text" th:field="*{nom}" required="required" minlength="3" maxlength="45">
+                        <span>Nom</span>
+                        <i></i>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" th:field="*{prenom}" required="required" minlength="3" maxlength="45">
+                        <span>Prenom</span>
+                        <i></i>
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="email" th:field="*{email}" required="required" minlength="5" maxlength="40"
+                            autocomplete="none">
+                        <span>E-mail</span>
+                        <i></i>
+                    </div>
+
+                    <!-- <div class="inputBox">
+                        <input type="text" th:field="*{mode_de_participation}" required="required" minlength="3" maxlength="30" >
+                        <span>mode de participation</span>
+                        <i></i>
+                    </div> -->
+
+                    <div class="inputBox">
+                        <input type="text" id="montant" name="montant" th:field="*{montant}" required="required" minlength="3" maxlength="6">
+                        <span>Montant (en gourdes)</span>
+                        <i></i>
+                    </div>
+
+                    <div class="inputBox bg-info">
+
+
+                        <select name="participation" id="mode"
+                            style="width: 80%; border: none; outline: none; height: 40px; background-color: transparent;" th:field="*{mode_de_participation}" required="required" class="">
+                            <!-- <input type="select" th:field="*{mode_de_participation}" required="required"> -->
+
+                            <option value="">Mode_de_participation</option>
+                            <option value="Presence">Presence</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Presence + Finance">Presence et Finance</option>
+                            <option value="Materielle">Materielle</option>
+                            <option value="À distance">À distance</option>
+                            <option value="À distance et Finance">À distance et Finance</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                        <i></i>
+                        
+
+                    </div>
+                    <span class="error" id="montantError"></span>
+
+                    <div class="links">
+                        <input type="submit" value="valider">
+                    </div>
+
+
+
+
+                </form>
+
+            </div>
+        </div>
+
+
+        <style>
+            .error {
+                color: #f72a2a;
+            }
+        </style>
+
+
+    </div>
+
+
+
+   <script>
+    document.getElementById('participantForm').addEventListener('submit', function(event){
+        const montantInput = document.getElementById('montant');
+        const montantError = document.getElementById('montantError');
+        const montant = montantInput.value
+
+        //Verifion la valeur est bien un nombre de type double et nom une chaine de caratère
+        if(isNaN(montant) || parseFloat(montant) < 0){
+            event.preventDefault();
+            montantError.textContent = "veuillez entrer un montant valide en gourders svp";
+            alert("Veuillez entrer un montant valide en gourdes svp");
+        }else{
+            montantError.textContent = "";
+        }
+    });
+   </script>
+</body>
+
+</html>
